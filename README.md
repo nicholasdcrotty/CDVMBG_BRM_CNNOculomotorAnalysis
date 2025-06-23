@@ -52,6 +52,6 @@ As mentioned earlier, all of the relevant data for this project is available at 
 
 ### ``oculomotorData``
 
-### ``RTs``
+### ``behavioralData``
 
 ### ``shapErrorBars``
