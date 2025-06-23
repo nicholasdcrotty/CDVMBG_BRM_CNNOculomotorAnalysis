@@ -1,2 +1,0 @@
-cnnResults/** filter=lfs diff=lfs merge=lfs -text
-oculomotorData/** filter=lfs diff=lfs merge=lfs -text
