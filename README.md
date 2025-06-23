@@ -5,8 +5,10 @@ This repository contains the scripts for a CNN-based analysis of time-course ocu
 
 ## Authors:
 **Nicholas Crotty**
-Trinity College,
-h
+
+Trinity College,__
+Hartford
+
 
 **Alenka Doyle**
 
