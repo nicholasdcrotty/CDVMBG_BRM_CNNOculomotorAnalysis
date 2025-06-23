@@ -1,7 +1,7 @@
 # CDVMBG_BRM_CNNOculomotorAnalysis
 This repository contains the scripts for a CNN-based analysis of time-course oculomotor data, as described in Crotty, Doyle, Volkova, Massa, Benson, &amp; Grubb (in prep).
 
-**NOTE:** All associated data (*e.g.*, the oculomotor data to which we applied the networks, the behavioral data utilized in the SHAP value - RT comparisons, and the files for the results reported in the manuscript) are freely available at the following link: **LINK**. Due to Github file size constraints, these files couldn't be included in the current repo.
+**NOTE:** All associated data and results (see **``Data``** below) are freely available at the following link: **LINK**. Due to Github file size constraints, these files couldn't be included in the current repo.
 
 ## Authors:
 **Nicholas Crotty**
@@ -49,9 +49,16 @@ This project has been posted under an MIT license.
 As mentioned earlier, all of the relevant data for this project is available at **LINK**. Here is what each file contains:
 
 ### ``cnnResults``
+Contains the results from the CNN-based analyses that we report in the manuscript, including the trial-level CNN accuracies, SHAP values, and model weights.
 
 ### ``oculomotorData``
+Contains the raw eye traces and experimental conditions files from each of the three studies used in the reported analyses.
 
 ### ``behavioralData``
+Contains the behavioral data used in the supplementary analysis, including the RTs for Massa *et al.*(2024) and Grubb &amp; Li (2018), as well as the distractor-attended info from Doyle *et al.* (2025)
 
 ### ``shapErrorBars``
+Contains .csv files of the sample-level error bars for the time-locked SHAP analysis (in case the user doesn't want to run the computationally exhaustive script that generates these error bars)
+
+## Acknowledgements
+This work was funded by NSF CAREER #2141860 to MAG and NIH grant R01EY033628 to NCB.
