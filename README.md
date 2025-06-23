@@ -55,7 +55,7 @@ Contains the results from the CNN-based analyses that we report in the manuscrip
 Contains the raw eye traces and experimental conditions files from each of the three studies used in the reported analyses.
 
 ### ``behavioralData``
-Contains the behavioral data used in the supplementary analysis, including the RTs for Massa *et al.*(2024) and Grubb &amp; Li (2018), as well as the distractor-attended info from Doyle *et al.* (2025)
+Contains the behavioral data used in the supplementary analysis, including the RTs for Massa *et al.* (2024) and Grubb &amp; Li (2018), as well as the distractor-attended info from Doyle *et al.* (2025)
 
 ### ``shapErrorBars``
 Contains .csv files of the sample-level error bars for the time-locked SHAP analysis (in case the user doesn't want to run the computationally exhaustive script that generates these error bars)
