@@ -14,3 +14,9 @@ This folder contains a script (as a .ipynb file) designed to be a framework for 
 
 ### ``Rscripts``
 This folder contains all of the .R files we used for the statistical interpretation of the CNN results, as well as the summary files for the Bayesian models.
+
+### ``README``
+The README file you're reading right now.
+
+### ``LICENSE``
+This project has been posted under an MIT license. 
