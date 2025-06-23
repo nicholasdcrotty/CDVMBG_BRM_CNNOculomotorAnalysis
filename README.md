@@ -4,6 +4,19 @@ This repository contains the scripts for a CNN-based analysis of time-course ocu
 **NOTE:** All associated data (*e.g.*, the oculomotor data to which we applied the networks, the behavioral data utilized in the SHAP value - RT comparisons, and the files for the results reported in the manuscript) are freely available at the following link: **LINK**. Due to Github file size constraints, these files couldn't be included in the current repo.
 
 ## Authors:
+**Nicholas Crotty**
+Trinity College,
+h
+
+**Alenka Doyle**
+
+**Kamilla Volkova**
+
+**Nicole Massa**
+
+**Noah Benson**
+
+**Michael Grubb** -- Corresponding Author
 
 ## Contents
 ### ``analysisForReplication``: 
