@@ -52,7 +52,7 @@ As mentioned earlier, all of the relevant data for this project is available at 
 Contains the results from the CNN-based analyses that we report in the manuscript, including the trial-level CNN accuracies, SHAP values, and model weights.
 
 ### ``oculomotorData``
-Contains the raw eye traces and experimental conditions files from each of the three studies used in the reported analyses.
+Contains the raw eye traces and experimental conditions files from all three studies used in the reported analyses.
 
 ### ``behavioralData``
 Contains the behavioral data used in the supplementary analysis, including the RTs for Massa *et al.* (2024) and Grubb &amp; Li (2018), as well as the distractor-attended info from Doyle *et al.* (2025)
