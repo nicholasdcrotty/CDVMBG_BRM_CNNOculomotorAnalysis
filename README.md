@@ -33,3 +33,14 @@ The README file you're reading right now.
 
 ### ``LICENSE``
 This project has been posted under an MIT license. 
+
+## Data
+As mentioned earlier, all of the relevant data for this project is available at **LINK**. Here is what each file contains:
+
+### ``cnnResults``
+
+### ``oculomotorData``
+
+### ``RTs``
+
+### ``shapErrorBars``
