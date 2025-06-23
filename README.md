@@ -6,19 +6,28 @@ This repository contains the scripts for a CNN-based analysis of time-course ocu
 ## Authors:
 **Nicholas Crotty**
 
-Trinity College,__
-Hartford
+Trinity College, Hartford, CT, USA
 
 
 **Alenka Doyle**
 
+Trinity College, Hartford, CT, USA
+
 **Kamilla Volkova**
+
+Trinity College, Hartford, CT, USA
 
 **Nicole Massa**
 
+Mass General Brigham, Boston, MA, USA
+
 **Noah Benson**
 
-**Michael Grubb** -- Corresponding Author
+eScience Institute, University of Washington, Seattle, WA, USA
+
+**Michael Grubb** -- Corresponding Author (michael.grubb@trincoll.edu)
+
+Trinity College, Hartford, CT, USA
 
 ## Contents
 ### ``analysisForReplication``: 
