@@ -83,7 +83,7 @@ errorsTimeLocked$X = NULL
 
 #prepare data for graph
 avgTimeCourse_TimeLocked = colMeans(timeLockedSHAPs, na.rm = TRUE)
-DF4GRAPH = data.frame(sample = seq(1,length(avgTimeCourse)*2, by =2), avgTimeCourse = avgTimeCourse,avgTimeCourse_TimeLocked,
+DF4GRAPH = data.frame(sample = seq(1,length(avgTimeCourse_TimeLocked)*2, by =2), avgTimeCourse_TimeLocked = avgTimeCourse_TimeLocked,
                       upperBound = as.vector(t(errorsTimeLocked[1,])), lowerBound = as.vector(t(errorsTimeLocked[2,])))
 
 #time-locked average trial -- Figure S1C
