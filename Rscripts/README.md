@@ -9,3 +9,6 @@ This script conducts all of the supplementary SHAP analyses for the CNN predicit
 
 ## ``CDVMBG_GrubbLiAnalysis.R``
 This script conducts all of the supplementary SHAP analyses for the CNN prediciting target location using Grubb & Li (2018) data (Figures S1B &amp; S1D).
+
+## ``CDVMBG_TransferLearning_CNNAccVsDoyleMetricCorr.R``
+This script compares the subject-level transfer learning CNN accuracy to the subject-level distractor attended rates from Doyle *et al.* (2025) via a correlation test, as reported in the Supplementary Results.
