@@ -4,6 +4,9 @@ This directory contains all of the R scripts we used to interpret the CNN result
 * The **``dataForDownload``** folder, from the link provided [here](https://www.dropbox.com/scl/fo/gk3dmvuezb0x2jpfuaz25/ADTFmr_LaAReYmQpPYjJO-s?rlkey=m7qz4nl04vohbbmgu6jt9ihlv&st=7wfcqtui&dl=0)
 * The file path (as a string) to where you downloaded the **``dataForDownload``** folder (which you'll assign to a variable called ``path`` at the beginning of every script)
 
+## ``CDVMBG_BRM_FrequentistResults.R``
+This script performs all of the frequentist results reported in the manuscript.
+
 ## ``CDVMBG_MassaSHAPAnalysis.R``
 This script conducts all of the supplementary SHAP analyses for the CNN prediciting target location using Massa *et al.* (2024) data (Figures S1A &amp; S1C).
 
