@@ -260,3 +260,6 @@ print(c("Mean across subjects: ", meansSubj_Doyle$transfer))
 print(c("bootstrapped subject-level 95% CI: ", rev(as.vector(errorsSubj_Doyle$transfer))))
 print("t-test comparing to chance: ")
 t.test(magSortTransfer$acc, chance, paired = TRUE)
+
+setwd(path)
+save(list = ls(.GlobalEnv), file = "CDVMBG_BRM_FrequentistResults_Environment.RData")
