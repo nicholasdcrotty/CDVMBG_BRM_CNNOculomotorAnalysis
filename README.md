@@ -1,7 +1,7 @@
 # CDVMBG_BRM_CNNOculomotorAnalysis
 This repository contains the scripts for a CNN-based analysis of time-course oculomotor data, as described in Crotty, Doyle, Volkova, Massa, Benson, &amp; Grubb (in prep).
 
-**NOTE:** All associated data and results (see **Data** below) are freely available [here](https://www.dropbox.com/scl/fo/gk3dmvuezb0x2jpfuaz25/ADTFmr_LaAReYmQpPYjJO-s?rlkey=m7qz4nl04vohbbmgu6jt9ihlv&st=7wfcqtui&dl=0). Due to Github file size constraints, these files couldn't be included in the current repo.
+**NOTE:** All associated data and results (see **Data** below) are freely available [here](https://www.dropbox.com/scl/fo/gk3dmvuezb0x2jpfuaz25/ADTFmr_LaAReYmQpPYjJO-s?rlkey=m7qz4nl04vohbbmgu6jt9ihlv&st=7wfcqtui&dl=0). Due to Github file size constraints, these files couldn't be included in the current repository.
 
 ## Authors:
 **Nicholas Crotty**
