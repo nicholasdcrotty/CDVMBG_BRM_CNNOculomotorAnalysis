@@ -1,7 +1,7 @@
 # Statistical interpretation of CNN results through R/RStudio
-(Intro desc) To utilize these scripts, you will need: 
+This directory contains all of the R scripts we used to interpret the CNN results (as reported in the manuscript). To utilize these scripts, you will need: 
 * A method of running .R code
-* The **``dataForDownload``** folder from the link provided [here]()
+* The **``dataForDownload``** folder, from the link provided [here]()
 * The file path to where you downloaded the **``dataForDownload``** folder 
 
 ## ``CDVMBG_MassaSHAPAnalysis.R``
