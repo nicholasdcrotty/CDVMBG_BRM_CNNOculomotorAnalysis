@@ -7,6 +7,9 @@ This directory contains all of the R scripts we used to interpret the CNN result
 ## ``CDVMBG_BRM_FrequentistResults.R``
 This script performs all of the frequentist results reported in the manuscript. This script will generate an ``.RData`` file that gets used in the Bayesian script (below) for quicker and simpler code.
 
+## ``CDVMBG_BRM_BayesianModel.R``
+Utilizing data structures generated from ``CDVMBG_BRM_FrequentistResults.R``, this script applies a heirarchical Bayesian model to the observed CNN accuracies, producing the posterior distributions reported in the manuscript.
+
 ## ``CDVMBG_BRM_MassaSHAPAnalysis.R``
 This script conducts all of the supplementary SHAP analyses for the CNN prediciting target location using Massa *et al.* (2024) data (Figures S1A &amp; S1C).
 
