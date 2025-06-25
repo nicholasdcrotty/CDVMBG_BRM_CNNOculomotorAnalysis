@@ -13,8 +13,11 @@ Utilizing data structures generated from ``CDVMBG_BRM_FrequentistResults.R``, th
 ## ``CDVMBG_BRM_MassaSHAPAnalysis.R``
 This script conducts all of the supplementary SHAP analyses for the CNN prediciting target location using Massa *et al.* (2024) data (Figures S1A &amp; S1C).
 
-## ``CDVMBG_BRM_GrubbLiAnalysis.R``
+## ``CDVMBG_BRM_GrubbLiSHAPAnalysis.R``
 This script conducts all of the supplementary SHAP analyses for the CNN prediciting target location using Grubb & Li (2018) data (Figures S1B &amp; S1D).
+
+## ``CDVMBG_BRM_distanceMinimization.R``
+This script applies a distance minimization algorithm to the entire dataset from Massa *et al.* (2024), as described in the Supplementary Results.
 
 ## ``CDVMBG_BRM_TransferLearning_CNNAccVsDoyleMetricCorr.R``
 This script compares the subject-level transfer learning CNN accuracy to the subject-level distractor attended rates from Doyle *et al.* (2025) via a correlation test, as reported in the Supplementary Results.
