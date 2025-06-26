@@ -21,11 +21,11 @@ Trinity College, Hartford, CT, USA
 
 Mass General Brigham, Boston, MA, USA
 
-**Noah C. Benson**
+**Noah C. Benson** *
 
 eScience Institute, University of Washington, Seattle, WA, USA
 
-**Michael A. Grubb** -- Corresponding Author (michael.grubb@trincoll.edu)
+**Michael A. Grubb** * -- Corresponding Author (michael.grubb@trincoll.edu)
 
 Trinity College, Hartford, CT, USA
 
