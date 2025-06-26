@@ -31,10 +31,8 @@ Trinity College, Hartford, CT, USA
 
 ## Contents
 ### ``analysisForReplication``: 
-This folder contains all of the analysis scripts (as .ipynb files) we utilized to produce the results reported in the manuscript.
+This folder contains all of the analysis scripts (as .ipynb files) we utilized to apply the CNN-based approach reported in the manuscript.
 
-### ``analysisForUser``: 
-This folder contains a script (as a .ipynb file) designed to be a framework for users to apply our approach to their own data.
 
 ### ``Rscripts``
 This folder contains all of the .R files we used for the statistical interpretation of the CNN results, as well as the summary files for the Bayesian models.
