@@ -29,6 +29,8 @@ eScience Institute, University of Washington, Seattle, WA, USA
 
 Trinity College, Hartford, CT, USA
 
+*- denotes shared senior authorship
+
 ## Contents
 ### ``analysisForReplication``: 
 This folder contains all of the analysis scripts (as .ipynb files) we utilized to apply the CNN-based approach reported in the manuscript.
