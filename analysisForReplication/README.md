@@ -8,5 +8,4 @@
 This script conducts the CNN-based analyses for the networks predicting target location and those predicting distractor location in Massa *et al.* (2024) and Grubb &amp; Li (2018).
 
 ## ``CDVMBG_BRM_CNNModelGeneralizability.ipynb``
-This script conducts the assessment of model generalizability, in which the network trained on the Massa *et al.* (2024) dataset is applied to the eye traces from Doyle *et al.* (2025)
-*
+This script conducts the assessment of model generalizability, in which the network trained on the Massa *et al.* (2024) dataset is applied to the eye traces from Doyle *et al.* (2025).
