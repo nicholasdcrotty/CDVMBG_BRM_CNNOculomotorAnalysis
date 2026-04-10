@@ -4,7 +4,7 @@ This repository contains the scripts for a CNN-based analysis of time-course ocu
 **NOTE:** All associated data and results (see **Data** below) are freely available [here](https://www.dropbox.com/scl/fo/gk3dmvuezb0x2jpfuaz25/ADTFmr_LaAReYmQpPYjJO-s?rlkey=m7qz4nl04vohbbmgu6jt9ihlv&st=7wfcqtui&dl=0). Due to Github file size constraints, these files couldn't be included in the current repository.
 
 ## Authors:
-**Nicholas Crotty**
+**Nicholas Crotty** -- Corresponding Author (nick.crotty@nyu.edu)
 
 Trinity College, Hartford, CT, USA
 
@@ -25,7 +25,7 @@ Mass General Brigham, Boston, MA, USA
 
 eScience Institute, University of Washington, Seattle, WA, USA
 
-**Michael A. Grubb** * -- Corresponding Author (michael.grubb@trincoll.edu)
+**Michael A. Grubb** * 
 
 Trinity College, Hartford, CT, USA
 
