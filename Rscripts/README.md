@@ -8,6 +8,9 @@ This directory contains all of the R scripts we used to interpret the CNN result
 ### `SHAP`
 Contains all R scripts related to the SHAP analysis of both distractor-predicting and target-predicting CNNs.
 
+### `Environments`
+Contains all scripts used to generate the .RData environments that contain the objects necessary for analysis.
+
 ## Files
 ### ``CDVMBG_BRM_FrequentistResults.R``
 This script performs all of the frequentist results reported in the manuscript. This script will generate an ``.RData`` file that gets used in the Bayesian script (below) for quicker and simpler code.
