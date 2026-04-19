@@ -1,8 +1,8 @@
 # Replicating results described in Crotty, Doyle, Volkova, Massa, Benson, & Grubb (in prep)
 (Intro sentence) To utilize these scripts, you will need:
 * A method of running ``.ipynb`` scripts
-* the files in the **``oculomotorData``** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
-* the model weights stored in the **``weights``** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
+* the files in the **``oculomotorData``** folder within the **`dataForDownload`** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
+* the model weights stored in the **``weights``** folder within the **`dataForDownload`** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
 
 ## ``CDVMBG_BRM_CNNBasedAnalysis_ForReplication.ipynb``
 This script conducts the CNN-based analyses for the networks predicting target location and those predicting distractor location in Massa *et al.* (2024) and Grubb &amp; Li (2018).
