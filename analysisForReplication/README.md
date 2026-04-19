@@ -1,4 +1,4 @@
-# Replicating results described in Crotty, Doyle, Volkova, Massa, Benson, & Grubb (in prep)
+# Replicating results described in Crotty, Doyle, Volkova, Massa, Benson, & Grubb (resubmitted)
 (Intro sentence) To utilize these scripts, you will need:
 * A method of running ``.ipynb`` scripts
 * the files in the **``oculomotorData``** folder within the **`dataForDownload`** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
