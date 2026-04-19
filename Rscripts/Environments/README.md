@@ -5,8 +5,8 @@ This directory contains the two R scripts we used to generate environments that 
 * The file path (as a string) to where you downloaded the **``dataForDownload``** folder (which you'll assign to a variable called ``path`` at the beginning of every script)
 
 ## Files
-### ``CDVMBG_BRM_GenerateDistractorEnvironment.R``
+### ``CDVMBG_BRM_GenerateDistractorLocationEnvironment.R``
 This script generates the environment for all analyses of distractor-predicting CNNs.
 
-### ``CDVMBG_BRM_GenerateTargetEnvironment.R``
+### ``CDVMBG_BRM_GenerateTargetLocationEnvironment.R``
 This script generates the environment for all analyses of target-predicting CNNs.
