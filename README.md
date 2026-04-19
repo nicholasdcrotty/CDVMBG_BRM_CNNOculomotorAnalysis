@@ -60,5 +60,8 @@ Contains the behavioral data used in the supplementary analysis, including the R
 ### ``shapErrorBars``
 Contains .csv files of the sample-level error bars for the time-locked SHAP analysis (in case the user doesn't want to run the computationally exhaustive script that generates these error bars)
 
+## ``environments``
+Contains .RData files with the relevant objects needed to run the statistical interpretation of CNNs, with each file/object already subsetted to only include trials for the corresponding validation set (target-predicting vs. distractor-predicting).
+
 ## Acknowledgements
-This work was funded by NSF CAREER #2141860 to MAG and NIH grant R01EY033628 to NCB.
+This work was funded by NSF GRFP to NC, NSF CAREER #2141860 to MAG and NIH grant R01EY033628 to NCB.
