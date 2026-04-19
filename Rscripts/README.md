@@ -6,7 +6,7 @@ This directory contains all of the R scripts we used to interpret the CNN result
 
 ## Folders
 ### `SHAP`
-Contains all R scripts related to the SHAP Analysis of both distractor-predicting and target-predicting CNNs.
+Contains all R scripts related to the SHAP analysis of both distractor-predicting and target-predicting CNNs.
 
 ## Files
 ### ``CDVMBG_BRM_FrequentistResults.R``
