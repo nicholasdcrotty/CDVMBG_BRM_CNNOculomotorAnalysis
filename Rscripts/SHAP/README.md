@@ -4,23 +4,32 @@ This directory contains all of the SHAP-related R scripts we used to interpret w
 * The **``dataForDownload``** folder, from the link provided [here](https://doi.org/10.5281/zenodo.19489022)
 * The file path (as a string) to where you downloaded the **``dataForDownload``** folder (which you'll assign to a variable called ``path`` at the beginning of every script)
 
+Note: The R script **`.R`** is also located in the **``dataForDownload``** folder (under the `environments` tab) as it gets loaded into other scripts via a `source` call (*i.e.*, it functions just like all the `.RData` environments used in the analysis).
+
 ## What is a SHAP analysis?
-DESCRIPTION HERE
+(PLAIN-LANGUAGE DESCRIPTION HERE)
+
 ## Files
-### ``CDVMBG_BRM_FrequentistResults.R``
-This script performs all of the frequentist results reported in the manuscript. This script will generate an ``.RData`` file that gets used in the Bayesian script (below) for quicker and simpler code.
+### ``CDVMBG_BRM_MassaTargSHAPAnalysis.R``
+This script focuses on temporal patterns in feature importance for the CNN predicting target location using Massa *et al.* (2024) data. It compares the timing of trial-level maximum SHAP values to the corresponding response time (RT), then time-locks all trials to the RT and illustrates how feature importance changes along the time-locked timecourse.
 
-### ``CDVMBG_BRM_BayesianModel.R``
-Utilizing data structures generated from ``CDVMBG_BRM_FrequentistResults.R``, this script applies a heirarchical Bayesian model to the observed CNN accuracies, producing the posterior distributions reported in the manuscript.
+### ``CDVMBG_BRM_GrubbLiTargSHAPAnalysis.R``
+This script focuses on temporal patterns in feature importance for the CNN predicting target location using Grubb &amp; (2018) data. It compares the timing of trial-level maximum SHAP values to the corresponding response time (RT), then time-locks all trials to the RT and illustrates how feature importance changes along the time-locked timecourse.
 
-### ``CDVMBG_BRM_MassaSHAPAnalysis.R``
-This script conducts all of the supplementary SHAP analyses for the CNN predicting target location using Massa *et al.* (2024) data (Figures S1A &amp; S1C).
+### ``CDVMBG_BRM_MassaSpatialSHAP_Distractor.R``
+This script focuses on spatial patterns in feature importance for the CNN predicting distractor location using Massa *et al.* (2024) data. It plots out the position of maximum SHAP values after aligning all distractors, then performs a Gaussian-weighted kernel density estimate (KDE) on the resulting distribution of points.
 
-### ``CDVMBG_BRM_GrubbLiSHAPAnalysis.R``
-This script conducts all of the supplementary SHAP analyses for the CNN predicting target location using Grubb & Li (2018) data (Figures S1B &amp; S1D).
+### ``CDVMBG_BRM_GrubbLiSpatialSHAP_Distractor.R``
+This script focuses on spatial patterns in feature importance for the CNN predicting distractor location using Grubb &amp; (2018) data. It plots out the position of maximum SHAP values after aligning all distractors, then performs a Gaussian-weighted KDE on the resulting distribution of points.
 
-### ``CDVMBG_BRM_distanceMinimization.R``
-This script applies a distance minimization algorithm to the entire dataset from Massa *et al.* (2024), as described in the Supplementary Results.
+### ``CDVMBG_BRM_DoyleSpatialSHAP_Distractor.R``
+This script focuses on *both* spatial and temporal patterns in feature importance, for the distractor-predicting CNN trained on Massa *et al.* (2024) data, and tested on Doyle *et al.* (2025) data. It plots out the position of maximum SHAP values after aligning all distractors, performs a Gaussian-weighted KDE on the resulting distribution of points, then generates a polar angle histogram of this distribution with color indicating trial-level timing. 
 
-### ``CDVMBG_BRM_TransferLearning_CNNAccVsDoyleMetricCorr.R``
-This script compares the subject-level transfer learning CNN accuracy to the subject-level distractor attended rates from Doyle *et al.* (2025) via a correlation test, as reported in the Supplementary Results.
+### ``CDVMBG_BRM_MassaSpatialSHAP_Target.R``
+This script focuses on spatial patterns in feature importance for the CNN predicting target location using Massa *et al.* (2024) data. It plots out the position of maximum SHAP values after aligning all targets, then performs a Gaussian-weighted KDE on the resulting distribution of points. 
+
+### ``CDVMBG_BRM_GrubbLiSpatialSHAP_Target.R``
+This script 
+
+### ``CDVMBG_BRM_DistractorSHAPSanityCheck.R``
+This script compares the timing of trial-level maximum SHAP values to the corresponding RT for both trained distractor-predicting CNNs.
