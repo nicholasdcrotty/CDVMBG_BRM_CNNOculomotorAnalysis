@@ -1,4 +1,4 @@
-# Statistical interpretation of CNN results through R/RStudio - SHAP analysis
+# SHAP analysis of CNNs through R/RStudio 
 This directory contains all of the SHAP-related R scripts we used to interpret what patterns in the eye data were most informative for CNN classification (as reported in the manuscript). To utilize these scripts, you will need: 
 * A method of running .R code
 * The **``dataForDownload``** folder, from the link provided [here](https://doi.org/10.5281/zenodo.19489022)
