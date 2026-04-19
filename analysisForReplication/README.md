@@ -3,6 +3,7 @@
 * A method of running ``.ipynb`` scripts
 * the files in the **``oculomotorData``** folder within the **`dataForDownload`** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
 * the model weights stored in the **``weights``** folder within the **`dataForDownload`** folder, linked [here](https://doi.org/10.5281/zenodo.19489022)
+
 Note: If you're using Google Colab (as we did), use the GUI to get the necessary files into the environment - it's a lot faster than within-code functions for reading all those large .csv files (for some reason). 
 
 ## ``CDVMBG_BRM_CNNBasedAnalysis_ForReplication.ipynb``
