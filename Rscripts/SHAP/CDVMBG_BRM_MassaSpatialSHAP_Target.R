@@ -4,7 +4,7 @@ rm(list=ls())
 options(digits = 10) # by default, print results to four decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 
-#replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
+#replace the empty quotes with the file path to the location where you downloaded the files from Zenodo below
 path = ''
 
 
@@ -17,7 +17,7 @@ subsetCorrects = 1
 
 #----- Load in data and functions -----
 setwd(paste(path, "/dataForDownload/environments", sep = ""))
-source('CDVMBG_BRM_SpatialSHAPFunctions.R') #Separate script for KDE functions -- COMPLETE THIS
+source('CDVMBG_BRM_SpatialSHAPFunctions.R') #Separate script for KDE functions
 load("CDVMBG_BRM_TargPredictionsAndEyeSorted.RData")
 #----- Load in data -----
 setwd(paste(path, "/dataForDownload/cnnResults/SHAP", sep = ""))
