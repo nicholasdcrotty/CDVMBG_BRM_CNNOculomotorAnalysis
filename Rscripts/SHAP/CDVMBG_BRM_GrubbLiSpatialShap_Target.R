@@ -9,7 +9,7 @@ set.seed(1823) #for replication - the year Trinity College was founded!
 mode = "BS"
 
 #replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
-path = '/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews'
+path = ''
 
 screenCM = c(59, (1439*(59))/2559) #from manuscript
 if (mode == "BS"){
@@ -31,9 +31,6 @@ setwd(paste(path, "/dataForDownload/cnnResults/SHAP", sep = ""))
 shapData = read.csv("shapValues_GrubbLiTargLoc_Decay.csv")
 shapData$X = NULL
 
-allShap = as.vector(as.matrix(shapData)) #get a sense for actual value distribution, 
-summary(allShap)
-#hist(allShap[allShap < median(allShap) + 3*sd(allShap)])
 # CNN predicting target location from Grubb & Li (2018) data
 setwd(paste(path, "/dataForDownload/cnnResults/accuracies/trial-level accuracies from best epoch", sep = ""))
 trialLevelTarg = read.csv("trialLevelAccuracy_GrubbLiTargLoc_Decay.csv")
@@ -45,9 +42,6 @@ setwd(path)
 load("CDVMBG_BRM_TargPredictionsAndEyeSorted.RData")
 
 #pixel location of each potential target location - UPDATE FOR GRUBB & LI, use vector math to extract from polar angles -- THEN MAKE RELATIVE TO ORIGIN
-# objectLocations_inPixels = data.frame(objectLocation = c(0, 60, 120, 180, 240, 300),
-#                                       objectX = c(1559.5, 1419.5, 1139.5, 999.5, 1139.5, 1419.5),
-#                                       objectY = c(719.5, 477.5, 477.5, 719.5, 961.5, 961.5))
 objectLocations_inDVA = data.frame(objectLocation = c(0, 60, 120, 180, 240, 300),
                                    objectX = c(0, 4.33, 4.33, 0, -4.33, -4.33),
                                    objectY = c(5, 2.5, -2.5, -5, -2.5, 2.5))
@@ -79,7 +73,6 @@ grubbLiY = grubbLiY[conditional,]
 shapData = shapData[conditional,]
 grubbLiBeh = grubbLiBeh[conditional,]
 }
-#normalizedShaps = as.data.frame(t(apply(shapData, 1, function(x) (x-min(x)) / (max(x)-min(x)) ) ))
 
 trialsToOverlay = 1:nrow(grubbLiConditions)
 targLocationBasis = as.numeric(objectLocations_inPixels[1, 2:3])
@@ -106,10 +99,6 @@ for(index in trialsToOverlay){
   targetY = objectLocations_inPixels$objectY[objectLocations_inPixels$objectLocation==grubbLiConditions$targetLocation[index]]
   targetVec = as.numeric(c(targetX, targetY))
   
-  # RT = round((grubbLiBeh$RT[index] / 2))
-  # if (RT > 600){RT = 600}
-  # if (RT < 0){RT = 1}
-  # DF4GRAPH = DF4GRAPH[1:RT,]
   DF4GRAPH$shapNorm = (DF4GRAPH$shap-min(DF4GRAPH$shap)) / (max(DF4GRAPH$shap)-min(DF4GRAPH$shap))
   
   coordinateMatrix = matrix(c(DF4GRAPH$xPos,  DF4GRAPH$yPos),
@@ -124,11 +113,6 @@ for(index in trialsToOverlay){
     rotatedDistancesFromTarg[index, sample] = sqrt(sum((rotatedCoords[,sample]-targLocationBasis)^2))
   }
   
-  #add transformed trace to plot
-  # tracesList = append(tracesList, geom_path(
-  #   #DIAGONAL LINES ARE PRODUCED BY RETURN TO ORIGIN AFTER RESPONSE MADE, THATS WHY STRAIGHT LINES
-  #   aes_string(x = DF4GRAPH$xPos_Rotated+origin[1], y = screenRes[2] - (DF4GRAPH$yPos_Rotated+origin[2]), color = DF4GRAPH$shapNorm), alpha = 0.2))
-  # print(index)
   
   #add coords of maximum SHAP value to dataframe
   maxSHAPVec = c(DF4GRAPH$xPos_Rotated[which.max(DF4GRAPH$shap)]+origin[1], 
@@ -140,13 +124,6 @@ for(index in trialsToOverlay){
   print(index)
   #BIG THING = rbind(BIG THING, little thing)
 }
-#----- Plot overlayed traces -----
-# #trialsOverlayed = trialsOverlayed + rev(tracesList) #some trials with missing eye data at end are influencing plot
-# trialsOverlayed = trialsOverlayed + scale_color_gradient(limits = c(0, 1), low = "blue", high = "red")+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX, y = screenRes[2] - objectY), pch = 1, size = 10, color = "black", stroke = 2)+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX[1], y = screenRes[2] -objectY[1]), 
-#              pch = 1, size = 10, color = "black", stroke = 5)
-# #plot(trialsOverlayed)
 
 #----- Plot position of largest SHAP values -----
 colnames(maxSHAPPos) = c("xPos", "yPos", "value", "distanceFromTarg", "cnnAcc")
