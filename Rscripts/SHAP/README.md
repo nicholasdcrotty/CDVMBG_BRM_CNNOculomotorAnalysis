@@ -9,7 +9,9 @@ Note: The R script **`CDVMBG_BRM_SpatialSHAPFunctions.R`** is also located in th
 
 
 ## What is a SHAP analysis?
-In broad terms, SHAP values quantify how much a specific feature in a model's input influences the overall prediction of the model. This influence is calculated by comparing the change in prediction between the current model and an identical model trained with this feature removed (known as the "explainer model"). Thus, SHAP values are an 'additive metric': the sum of all SHAP values is equivalent to the overall change in prediction between the current model and the explainer. In their publication that introduced SHAP values, NAME Lundberg and NAME Lee provide a nice walkthrough of . Other helpful resources are . While SHAP values are known to be 'model-agnostic', our 
+In broad terms, a SHAP analysis quantifies how much eac feature in a model's input influences the overall prediction of the model. This influence is calculated separately for each feature by comparing the change in prediction between the current model and an identical model trained with the feature removed (known as the "explainer model"). (SETUP), SHAP values are an 'additive metric': the sum of all SHAP values is equivalent to the overall change in prediction between the current model and the explainer. (We use Deep SHAP, an implementation for deep networks). (Since we don't care about the specific class AND large negative SHAP values also indicate high importance, we take the absolute value and collapse across classes).
+
+In their 2017 publication that introduced SHAP values, Scott Lundberg and Su-In Lee provide a nice walkthrough of . Other helpful resources are . 
 
 ## Files
 ### ``CDVMBG_BRM_MassaTargSHAPAnalysis.R``
