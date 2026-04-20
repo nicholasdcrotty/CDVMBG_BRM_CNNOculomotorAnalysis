@@ -6,7 +6,7 @@ set.seed(1823) #for replication - the year Trinity College was founded!
 
 
 #replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
-path = '/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews'
+path = ''
 
 mode = "BS"
 
@@ -89,7 +89,6 @@ for(index in trialsToOverlay){
                         xPos = as.vector(t(grubbLiX[index,])),
                         yPos = as.vector(t(grubbLiY[index,])),
                         shap = as.vector(t(shapData[index,])))
-  #shapNorm = as.vector(t(normalizedShaps[index,])))
   distractorX = objectLocations_inPixels$objectX[objectLocations_inPixels$objectLocation==grubbLiConditions$distractorLocation[index]]
   distractorY = objectLocations_inPixels$objectY[objectLocations_inPixels$objectLocation==grubbLiConditions$distractorLocation[index]]
   distractorVec = as.numeric(c(distractorX, distractorY))
@@ -107,12 +106,6 @@ for(index in trialsToOverlay){
   for (sample in 1:ncol(rotatedCoords)){
     rotatedDistancesFromDist[index, sample] = sqrt(sum((rotatedCoords[,sample]-distLocationBasis)^2))
   }
-  
-  # #add transformed trace to plot
-  # tracesList = append(tracesList, geom_path(
-  #   #DIAGONAL LINES ARE PRODUCED BY RETURN TO ORIGIN AFTER RESPONSE MADE, THATS WHY STRAIGHT LINES
-  #   aes_string(x = DF4GRAPH$xPos_Rotated+origin[1], y = screenRes[2] - (DF4GRAPH$yPos_Rotated+origin[2]), color = DF4GRAPH$shapNorm), alpha = 0.2))
-  # print(index)
   
   #add coords of maximum SHAP value to dataframe
   maxSHAPVec = c(DF4GRAPH$xPos_Rotated[which.max(DF4GRAPH$shap)]+origin[1], 
