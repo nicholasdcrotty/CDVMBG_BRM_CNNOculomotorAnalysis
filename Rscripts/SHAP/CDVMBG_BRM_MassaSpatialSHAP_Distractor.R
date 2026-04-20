@@ -7,7 +7,7 @@ set.seed(1823) #for replication - the year Trinity College was founded!
 
 
 #replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
-path = '/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews'
+path = ''
 
 screenCM = c(59, (1439*(59))/2559) #from manuscript
 viewingDist = 70 #from manuscript
@@ -55,7 +55,6 @@ shapData = shapData[conditional,]
 massaConditions = massaConditions[conditional,]
 massaBeh = massaBeh[conditional,]
 }
-#massaBeh_AllCond = massaBeh_All[conditional,]
 
 normalizedShaps = as.data.frame(t(apply(shapData, 1, function(x) (x-min(x)) / (max(x)-min(x)) ) ))
 
@@ -80,7 +79,6 @@ for(index in trialsToOverlay){
                         xPos = as.vector(t(massaX[index,])),
                         yPos = as.vector(t(massaY[index,])),
                         shap = as.vector(t(shapData[index,])))
-  #shapNorm = as.vector(t(normalizedShaps[index,])))
   distractorX = objectLocations_inPixels$objectX[objectLocations_inPixels$objectLocation==massaConditions$valueDistractorLocation[index]]
   distractorY = objectLocations_inPixels$objectY[objectLocations_inPixels$objectLocation==massaConditions$valueDistractorLocation[index]]
   distractorVec = as.numeric(c(distractorX, distractorY))
@@ -105,12 +103,6 @@ for(index in trialsToOverlay){
     rotAngles[index,sample] = rotateAngle(vec1 = distLocationBasis, vec2 = coordVec[,sample])
   }
   
-  # #add transformed trace to plot
-  # tracesList = append(tracesList, geom_path(
-  #   #DIAGONAL LINES ARE PRODUCED BY RETURN TO ORIGIN AFTER RESPONSE MADE, THATS WHY STRAIGHT LINES
-  #   aes_string(x = DF4GRAPH$xPos_Rotated+origin[1], y = screenRes[2] - (DF4GRAPH$yPos_Rotated+origin[2]), color = DF4GRAPH$shapNorm), alpha = 0.2))
-  # print(index)
-  # 
   #add coords of maximum SHAP value to dataframe
   #add coords of maximum SHAP value to dataframe
   maxSHAP_X = DF4GRAPH$xPos_Rotated[which.max(DF4GRAPH$shap)]+origin[1]
@@ -125,26 +117,8 @@ for(index in trialsToOverlay){
                  rotateAngle(vec1 = distLocationBasis, vec2 = c(maxSHAP_X,maxSHAP_Y)))
   maxSHAPPos = rbind(maxSHAPPos, maxSHAPVec)
   #BIG THING = rbind(BIG THING, little thing)
+  print(index)
 }
-
-
-#----- Polar plot of first saccades for ENTIRE dataset -----
-# polarSac = ggplot() +
-#   geom_histogram(data = massaBeh_AllCond,aes(x=firstSacLocation.abs),bins = 100)+
-#   coord_polar(theta ='x')+
-#   theme_minimal() +
-#   scale_x_continuous(breaks = c(0,90,180,270))+
-#   theme(axis.text.y = element_blank(), axis.title = element_blank())
-# plot(polarSac)
-
-#----- Plot overlayed traces -----
-# trialsOverlayed = trialsOverlayed + rev(tracesList) #some trials with missing eye data at end are influencing plot
-# trialsOverlayed = trialsOverlayed + scale_color_gradient(limits = c(0, 1), low = "blue", high = "red")+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX, y = screenRes[2] - objectY), pch = 1, size = 10, color = "black", stroke = 2)+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX[1], y = screenRes[2] -objectY[1]), 
-#              pch = 1, size = 10, color = "black", stroke = 5)
-# plot(trialsOverlayed)
-
 
 
 #----- Plot position of largest SHAP values -----
@@ -156,12 +130,6 @@ maxSHAPPos$accuracy = ifelse(maxSHAPPos$cnnAcc,"limegreen","firebrick1")
 maxSHAPPos$angle = maxSHAPPos$angle
 maxSHAPPos$angle = maxSHAPPos$angle *(180/pi)
 maxSHAPPos$angle[maxSHAPPos$angle<0 & !is.na(maxSHAPPos$angle)] = 360 + maxSHAPPos$angle[maxSHAPPos$angle<0 & !is.na(maxSHAPPos$angle)]
-
-
-
-
-
-#nonTargets = objectLocations_inPixels[2:6,]
 
 trialMaxPositions = ggplot()+
   geom_point(data = maxSHAPPos, aes(x = xPos, y = yPos), alpha = 0.2) +
