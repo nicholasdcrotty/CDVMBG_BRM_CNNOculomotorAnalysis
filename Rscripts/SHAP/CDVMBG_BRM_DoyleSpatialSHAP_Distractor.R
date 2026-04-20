@@ -5,7 +5,7 @@ options(digits = 10) # by default, print results to four decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 
 
-#replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
+#replace the empty quotes with the file path to the location where you downloaded the files from Zenodo below
 path = ''
 
 screenCM = c(59, (1439*(59))/2559) #from manuscript
@@ -18,7 +18,7 @@ resolution = 10 #toggle for KDE
 
 #----- Load in data and functions -----
 setwd(paste(path, "/dataForDownload/environments", sep = ""))
-source('CDVMBG_BRM_SpatialSHAPFunctions.R') #Separate script for KDE functions -- COMPLETE THIS
+source('CDVMBG_BRM_SpatialSHAPFunctions.R') #Separate script for KDE functions
 load("CDVMBG_BRM_DistPredictionsAndEyeSorted.RData")
 
 #----- Load in data -----
