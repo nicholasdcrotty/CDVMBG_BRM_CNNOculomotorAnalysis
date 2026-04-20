@@ -147,7 +147,7 @@ plot(trialMaxPositions)
 #----- KDE -----
 grid_points = gaussianKDE(maxSHAPPos, resolution)
 
-# 2. Plot the Observed Weighted KDE Surface
+# Plot the Observed Weighted KDE Surface
 kde_plot <- ggplot() +
   # Use geom_raster to map the density values onto the grid
   geom_raster(data = grid_points, aes(x = X_grid, y = Y_grid, fill = (Density-min(Density)) / (max(Density)-min(Density)) )) +
