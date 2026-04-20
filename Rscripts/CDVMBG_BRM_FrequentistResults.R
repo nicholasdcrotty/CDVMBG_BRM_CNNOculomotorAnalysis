@@ -3,7 +3,7 @@ rm(list=ls())
 options(digits = 4) # by default, print results to four decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 
-#replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
+#replace the empty quotes with the file path to the location where you downloaded the files from Zenodo below
 path = ""
 
 chance = rep((1/6), times = 110) #define vector of chance values for t-tests
