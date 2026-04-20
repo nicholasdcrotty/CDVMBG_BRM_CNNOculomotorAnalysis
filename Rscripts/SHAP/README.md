@@ -9,7 +9,7 @@ Note: The R script **`CDVMBG_BRM_SpatialSHAPFunctions.R`** is also located in th
 
 
 ## What is a "SHAP analysis"?
-In broad terms, a SHapley Additive exPlanation (SHAP) analysis quantifies how much each feature in a model's input influences the overall prediction of the model. This approach is derived from a game theory concept known as Shapley values (hence the name), which signify the fair payout of each player in a collaborative game given their contribution to the game's outcome. Translating from game theory parlance, Shapley values are calculated for every feature of an input to a given model through the following: 
+In broad terms, a SHapley Additive exPlanation (SHAP) analysis quantifies how much each feature in a model's input influences the overall prediction of the model. In our case, SHAP analysis quantifies how much every sample of gaze (x- and y-position) in each trial's timecourse contributed to the CNN's prediction of object location (either target or distractor location). This approach is derived from a game theory concept known as Shapley values (hence the name), which signify the fair payout of each player in a collaborative game given their contribution to the game's outcome. Translating from game theory parlance, Shapley values are calculated for every feature of an input to a given model through the following: 
 1. Taking a subset of the input that includes a given feature and finding the model's output for that subset
 2. Find the model's output for the same subset but with the given feature removed (the "explainer model")
 3. Calculating the difference between the two outputs
