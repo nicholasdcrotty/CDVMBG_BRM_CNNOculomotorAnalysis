@@ -1,10 +1,10 @@
 library(ggplot2)
 rm(list=ls())
-options(digits = 10) # by default, print results to four decimal digits
+options(digits = 4) # by default, print results to four decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 
 #replace the empty quotes with the file path to the location where you downloaded the files from Zenodo below
-path = "/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews"
+path = ""
 
 setwd(paste(path, "/dataForDownload/environments", sep = ""))
 
@@ -30,8 +30,6 @@ setwd(path)
 saccadeCNN_Massa = trialLevelValueLoc[!is.na(massaBeh$firstSacLocation.category),]
 saccadeDF_Massa = massaBeh[!is.na(massaBeh$firstSacLocation.category),]
 
-
-#CHECK IF I SHOULD ISOLATE SACCADE-PRESENT TRIALS FOR CNN ACCURACY
 subjCNNAcc_Massa = aggregate(saccadeCNN_Massa, list(ID = saccadeDF_Massa$subjNum), mean)
 subjSaccadeRates_Massa = aggregate(saccadeDF_Massa$firstSacLocation.category==saccadeDF_Massa$valueDistractorLocation, list(ID = saccadeDF_Massa$subjNum), mean)
 
@@ -53,7 +51,6 @@ for (c in 1:ncol(DF4GRAPH_Massa)){
 }
 colnames(errorsSubj_Massa) = colnames(DF4GRAPH_Massa)
 
-#t.test(subjCNNAcc_NoSac$x, chance, paired = TRUE)
 #----- graph -----
 massaSaccUnityPlot = ggplot()+
   geom_abline(slope = 1, intercept = 0, color = "black")+
