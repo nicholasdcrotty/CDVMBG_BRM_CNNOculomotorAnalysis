@@ -3,7 +3,7 @@ rm(list=ls())
 options(digits = 10) # by default, print results to ten decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 
-#replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
+#replace the empty quotes with the file path to the location where you downloaded the files from Zenodo below
 path = ""
 
 
