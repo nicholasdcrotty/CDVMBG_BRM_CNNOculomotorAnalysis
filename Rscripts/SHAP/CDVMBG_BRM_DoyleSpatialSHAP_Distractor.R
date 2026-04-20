@@ -6,7 +6,7 @@ set.seed(1823) #for replication - the year Trinity College was founded!
 
 
 #replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
-path = '/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews'
+path = ''
 
 screenCM = c(59, (1439*(59))/2559) #from manuscript
 viewingDist = 70 #from manuscript
@@ -41,28 +41,11 @@ objectLocations_inPixels = data.frame(objectLocation = c(0, 60, 120, 180, 240, 3
                                       objectX = c(1559.5, 1419.5, 1139.5, 999.5, 1139.5, 1419.5),
                                       objectY = c(719.5, 477.5, 477.5, 719.5, 961.5, 961.5),
                                       objectSize=rep(objSize[1], times = 6))
-# objectLocations_inDVA = data.frame(objectLocation = c(0, 60, 120, 180, 240, 300),
-#                                    objectX = c(0, 4.33, 4.33, 0, -4.33, -4.33),
-#                                    objectY = c(5, 2.5, -2.5, -5, -2.5, 2.5))
-
-# pixLocations = matrix(nrow = nrow(objectLocations_inPixels), ncol = 2)
-# for(i in 1:nrow(objectLocations_inPixels)){pixLocations[i,] = DVAtoPix(objectLocations_inPixels$objectX[i], objectLocations_inPixels$objectY[i])}
-# 
-# objectLocations_inPixels = data.frame(
-#   objectLocation = objectLocations_inPixels$objectLocation,
-#   objectX = pixLocations[,1] + origin[1],
-#   objectY = screenRes[2] - (pixLocations[,2] + origin[2])
-# )
-# rownames(objectLocations_inPixels) = objectLocations_inPixels$objectLocation
 
 #----- Iterate through plotting correct CNN trials on same plane -----
 
-#DO FOR DIST AND OBJECTS, THEN COMPARE SPATIAL SHAPS (VIA SUBTRACTIONS?)
-#doyleBeh_AllNoTarg = doyleBeh[doyleBeh$firstSacLocation.category!=doyleConditions$targetLocation & !is.na(doyleBeh$firstSacLocation.category),]
 
 condsDup = doyleConditions
-#conditional = !is.na(doyleBeh$RT)
-#conditional = doylePredictions==(condsDup$distractorLocation/60) & !is.na(doyleBeh$RT)
 conditional = doyleBeh$firstSacLocation.category!=doyleConditions$targetLocation & doylePredictions==(condsDup$distractorLocation/60) & !is.na(doyleBeh$firstSacLocation.category)
 
 doyleX = doyleX[conditional,]
@@ -81,7 +64,7 @@ rotatedDistancesFromDist = matrix(nrow = nrow(doyleConditions), ncol = 600)
 
 trialsOverlayed = ggplot()+
   coord_cartesian(xlim=c(origin[1]-300,origin[1]+300), ylim =c(origin[2]-300,origin[2]+300))+
-  #coord_cartesian(xlim=c(0,screenRes[1]), ylim =c(0, screenRes[2]))+
+
   labs(x = "x-position (pixels)", y = "y-position (pixels)")+
   theme_classic()
 
@@ -96,7 +79,6 @@ for(index in trialsToOverlay){
                         xPos = as.vector(t(doyleX[index,])),
                         yPos = as.vector(t(doyleY[index,])),
                         shap = as.vector(t(shapData[index,])))
-  #shapNorm = as.vector(t(normalizedShaps[index,])))
   distractorX = objectLocations_inPixels$objectX[objectLocations_inPixels$objectLocation==doyleConditions$distractorLocation[index]]
   distractorY = objectLocations_inPixels$objectY[objectLocations_inPixels$objectLocation==doyleConditions$distractorLocation[index]]
   distractorVec = as.numeric(c(distractorX, distractorY))
@@ -121,12 +103,6 @@ for(index in trialsToOverlay){
     rotAngles[index,sample] = rotateAngle(vec1 = distLocationBasis, vec2 = coordVec[,sample])
   }
   
-  # #add transformed trace to plot
-  # tracesList = append(tracesList, geom_path(
-  #   #DIAGONAL LINES ARE PRODUCED BY RETURN TO ORIGIN AFTER RESPONSE MADE, THATS WHY STRAIGHT LINES
-  #   aes_string(x = DF4GRAPH$xPos_Rotated+origin[1], y = screenRes[2] - (DF4GRAPH$yPos_Rotated+origin[2]), color = DF4GRAPH$shapNorm), alpha = 0.2))
-  # print(index)
-  # 
   #add coords of maximum SHAP value to dataframe
   maxSHAP_X = DF4GRAPH$xPos_Rotated[which.max(DF4GRAPH$shap)]+origin[1]
   maxSHAP_Y = screenRes[2] - (DF4GRAPH$yPos_Rotated[which.max(DF4GRAPH$shap)]+origin[2])
@@ -140,16 +116,9 @@ for(index in trialsToOverlay){
                  rotateAngle(vec1 = distLocationBasis, vec2 = c(maxSHAP_X,maxSHAP_Y)))
   maxSHAPPos = rbind(maxSHAPPos, maxSHAPVec)
   #BIG THING = rbind(BIG THING, little thing)
+  print(index)
 }
 
-
-#----- Plot overlayed traces -----
-# trialsOverlayed = trialsOverlayed + rev(tracesList) #some trials with missing eye data at end are influencing plot
-# trialsOverlayed = trialsOverlayed + scale_color_gradient(limits = c(0, 1), low = "blue", high = "red")+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX, y = screenRes[2] - objectY), pch = 1, size = 10, color = "black", stroke = 2)+
-#   geom_point(data = objectLocations_inPixels, aes(x = objectX[1], y = screenRes[2] -objectY[1]), 
-#              pch = 1, size = 10, color = "black", stroke = 5)
-# plot(trialsOverlayed)
 
 #----- Plot position of largest SHAP values -----
 colnames(maxSHAPPos) = c("idx", "xPos", "yPos", "value", "distanceFromTarg", "cnnAcc","angle")
@@ -224,11 +193,6 @@ polarMaxSHAPPlotAvg = ggplot()+
 plot(polarMaxSHAPPlotAvg)
 
 
-# #----- Comparison of relative saccade-level proportions -----
-# doyleProp = sacCount$firstSacLocation.abs / nrow(doyleBeh)
-# shapProp = maxSHAPPosPlotDF$count / nrow(maxSHAPPos) #WHY DOES THIS ADD TO SLIGHTLY LESS THAN 1? MAYBE THE POLAR ANGLE CORRECTION?
-# 
-# #ONCE `shapProp` CORRECTED, DO T TEST
 
 
 
