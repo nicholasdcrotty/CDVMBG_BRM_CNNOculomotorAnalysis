@@ -3,9 +3,8 @@ rm(list=ls())
 options(digits = 4) # by default, print results to four decimal digits
 set.seed(1823) #for replication - the year Trinity College was founded!
 #replace the empty quotes with the file path to the location where you downloaded the files from Dropbox below
-path = "/Users/nicholascrotty/Desktop/Ongoing Trinity Projects/CDVMBG Reviews"
+path = ""
 
-#GENERATE TENSOR OF MATRICES WHERE ROWS, COLUMNS, AND SLICES CORRESPOND TO PREDICTED, ACTUAL, AND OTHER OBJ LOCATION
 
 screenRes = c(2559,1439)
 origin = screenRes/2
