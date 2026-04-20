@@ -156,9 +156,7 @@ kde_plot <- ggplot() +
   
   geom_point(data = objectLocations_inPixels, aes(x = objectX[1], y = screenRes[2] -objectY[1]), 
              pch = 8, size = 4, color = "white") +
-  # Optional: Overlay the original point locations for context
-  # geom_point(data = df_points, aes(x = xPos, y = yPos), 
-  #            color = "white", size = 0.5, alpha = 0.6) +
+
   
   # Set a continuous color scale (e.g., Viridis for perceptually uniform colors)
   scale_fill_viridis_c(name = "Weighted Density",option = 'plasma') + 
