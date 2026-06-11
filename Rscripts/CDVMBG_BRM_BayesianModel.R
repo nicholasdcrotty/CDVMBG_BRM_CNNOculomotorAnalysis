@@ -54,9 +54,9 @@ empirAcc = data.frame(all=means$all,
 
 #graph lists
 graphs = list(graph1=NA, graph2=NA,graph3=NA,graph4=NA,graph5=NA)
-graphNames = list("massa target loc - Figure 3B", "grubb li target loc - Figure 3D",  
-                  "grubb li distractor loc - Figure 4D", "massa distractor loc - Figure 4B", 
-                  "transfer learning distractor loc - Figure 5B")
+graphNames = list("massa target loc - Figure 4C", "grubb li target loc - Figure 4F",  
+                  "grubb li distractor loc - Figure 5D", "massa distractor loc - Figure 5B", 
+                  "transfer learning distractor loc - Figure 6B")
 
 #subject IDs for graphing
 subjMassa = sort(unique(trialLevelAll$subjID))
@@ -116,3 +116,18 @@ for (df in 1:5){ #only first 5 values of list used, since back half just for nTr
 names(allResults) = graphNames
 names(reportedStats) = graphNames
 print(reportedStats)
+
+#----- Model diagnostics -----
+diagnosticsDF = as.data.frame(do.call(rbind, as.matrix(do.call(rbind, lapply(allResults, function(x) x[-1])))))
+
+labelVec = vector()
+for(r in 1:length(allResults)){
+  labelVec =c(labelVec, rep(names(allResults)[r], times = nrow(allResults[[r]][[2]])))
+}
+diagnosticsDF$modelLabel = labelVec
+
+aggregate(diagnosticsDF$modelLabel, list(modelLabel = diagnosticsDF$modelLabel), length) #check: should be # of participants + 2 shape parms each
+
+
+
+write.csv(diagnosticsDF, "CDVMBG_BRM_ModelDiagnostics.csv") 
