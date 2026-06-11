@@ -27,3 +27,6 @@ This script generates confusion matrices for the predictions of the target-predi
 ### ``CDVMBG_BRM_distanceMinimization.R``
 This script applies a distance minimization algorithm to the entire dataset from Massa *et al.* (2024), as described in the Supplementary Results.
 
+### ``CDVMBG_BRM_modelDiagnostics.csv``
+This `.csv` file contains the diagnostic information (mean, standard deviation, 95% credible interval, r-hat, and number of effective samples) for all Bayesian models reported in the manuscript.
+
