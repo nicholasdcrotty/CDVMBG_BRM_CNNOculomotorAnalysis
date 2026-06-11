@@ -1,5 +1,5 @@
 # CDVMBG_BRM_CNNOculomotorAnalysis
-This repository contains the scripts for a CNN-based analysis of time-course oculomotor data, as described in Crotty, Doyle, Volkova, Massa, Benson, &amp; Grubb (2026), linked [here](https://doi.org/10.3758/s13428-026-03057-2).
+This repository contains the scripts for a CNN-based analysis of time-course oculomotor data, as described in Crotty, Doyle, Volkova, Massa, Benson, &amp; Grubb (2026). The associated manuscript is linked [here](https://doi.org/10.3758/s13428-026-03057-2).
 
 **NOTE:** All associated data and results (see **Data** below) are freely available [here](https://doi.org/10.5281/zenodo.19489022). Due to Github file size constraints, these files couldn't be included in the current repository.
 
